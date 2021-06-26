@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #4c6986;
+}
+
+.wrapper{
+    height: 600px;
+    /* background-color: yellow; */
+    display: flex;
+    max-width: 1440px;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.restart{
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    /* background-color: pink; */
+    border: 1px solid #4c6986;
+    align-items: center;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.restart:hover{
+    transition: all 0.4s ease;
+    background-color: #4c6986;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.restart h1{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.title{
+    max-width: 500px;
+}
+.game{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    color: #9A9A9A;
+    font-size: 20px;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+}
+
+.board-tyle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.board-tyle:not(:nth-child(3n)){
+    border-right: 3px solid rgba(137,163,189,0.8);
+}
+
+.board-tyle:not(:nth-last-child(-n + 3)){
+    border-bottom: 3px solid rgba(137,163,189,0.8);
+}
+
+.header .player-x{
+    flex: 1;
+    border-bottom: 5px solid #eee;
+    padding-bottom: 8px;
+}
+
+.header .player-o{
+    flex: 1;
+    padding-bottom: 8px;
+    border-bottom: 5px solid #eee;
+}
+
+.player-x.active{
+    color: #42BED7;
+    border-color: #42BED7;
+}
+
+.player-o.active{
+    color: #D7BAFB;
+    border-color: #D7BAFB;
+}
+
+.board-tyle:hover{
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.tile-X{
+    color: #42BED7;
+}
+
+.tile-O{
+    color: #D7BAFB;
+    
+}
+
+.tile-winner span{
+    color: #23ce68;
+}
+
+@media screen and (max-width : 900px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left{
+        margin-bottom: 50px;
+    }
+}
